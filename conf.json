@@ -1,0 +1,11 @@
+{
+    "folder_audit_and_ctf" : "~/",
+    "audit_conf" : {},
+    "ctf_conf" : {
+        "chall_metadata" : {
+            "file_name" : "metadata.txt",
+            "validated" : "validated",
+            "points" : "points"
+        }
+    }
+}

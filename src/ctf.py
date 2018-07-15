@@ -28,3 +28,13 @@ class CTF():
     def __init__(self, name):
         self.name = name
         self.date = datetime.datetime.now().year
+
+        with open("../config.json") as config_file : 
+            self.conf = json.load(config_file)["ctf_conf"]
+
+
+
+class CTF_chall(CTF):
+
+    def __init__(self):
+        CTF.__init__(self)
