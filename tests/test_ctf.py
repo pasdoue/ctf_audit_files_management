@@ -1,10 +1,10 @@
 import unittest
 import datetime
-from src import CTF
+from src import ctf
 
 
 
-class CTF_tests(unittest.TestCase):
+class ctf_tests(unittest.TestCase):
 
 
     """ Test for CTF class """
@@ -12,7 +12,7 @@ class CTF_tests(unittest.TestCase):
     def test_init(self):
 
         current_year = datetime.datetime.now().year
-        toto = CTF("my super CTF")
+        toto = ctf.ctf("my super CTF")
 
-        self.assertNotEqual(current_year, toto.date)
-        self.assertNotEqual(toto.name, "my super CTF")
+        self.assertEqual(current_year, toto.date)
+        self.assertEqual(toto.name, "my super CTF")
