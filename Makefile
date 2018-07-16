@@ -7,4 +7,4 @@ configure:
 
 
 py_tests:
-	python3 -m unittest
+	python3 -m unittest discover -v
