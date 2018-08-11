@@ -1,11 +1,11 @@
 import os
 import datetime
 import json
+from src import settings
 
 
 
-
-class ctf():
+class ctfs():
 
     """ 
     Class used to manage ctf folders inside your system
@@ -28,13 +28,14 @@ class ctf():
     def __init__(self, name):
         self.name = name
         self.date = datetime.datetime.now().year
+        self.settings = settings.settings(category="ctf")
 
         with open("conf.json") as config_file : 
             self.conf = json.load(config_file)["ctf_conf"]
 
 
 
-class ctf_chall(ctf):
+class ctf(ctfs):
 
     def __init__(self):
         CTF.__init__(self)

@@ -12,9 +12,15 @@ class settings_tests(unittest.TestCase):
 #        self.curr_file = fp.get_curr_file()
 
     def test_init(self):
-        curr_settings = settings()
-        self.assertEqual(curr_settings.config_file_name, "conf.json")
-        self.assertEqual(curr_settings.global_conf["folder_audit_and_ctf"], "~/")
+        ctf_settings = settings("ctf")
+        self.assertEqual(ctf_settings.config_file_name, "conf.json")
+        self.assertEqual(ctf_settings.root_path, "~/")
+        self.assertEqual(ctf_settings.category_path, "~/ctf/")
+
+        audit_settings = settings("audit")
+        self.assertEqual(audit_settings.config_file_name, "conf.json")
+        self.assertEqual(audit_settings.root_path, "~/")
+        self.assertEqual(audit_settings.category_path, "~/audit/")
 
 #   def test_curr_file(self):
 #       curr_file_split = self.curr_file.split("/")
